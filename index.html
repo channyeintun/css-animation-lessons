@@ -19,7 +19,7 @@
     }
     #one{
         border:3px solid blueviolet;
-        transition-duration: 600ms;
+        transition-duration: 300ms;
     }
     #one:hover{
         background-color: blueviolet;
@@ -36,7 +36,7 @@
         width: 0%;
         height:2px;
         background-color:blueviolet;
-        transition-duration: 600ms;
+        transition-duration: 300ms;
     }
     #two::after{
         position:absolute;
@@ -46,7 +46,7 @@
         width: 0%;
         height:2px;
         background-color:blueviolet;
-        transition-duration: 600ms;
+        transition-duration: 300ms;
     }
     #two:hover::after,
     #two:hover::before{
@@ -54,7 +54,7 @@
     }
     #three{
         position:relative;
-        transition: color 400ms ease-in-out;
+        transition: color 300ms ease-in-out;
     }
     #three::after{
         content: '';
@@ -65,7 +65,7 @@
         height: 0%;
         background-color: blueviolet;
         z-index: -1;
-        transition: 400ms ease-in-out;
+        transition: 300ms ease-in-out;
     }
     #three:hover::after
     {
@@ -74,10 +74,165 @@
     #three:hover{
         color:#fff;
     }
+    #four{
+        position:relative;
+        transition: 300ms;
+    }
+    #four::before{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        background-color: blueviolet;
+        width: 0;
+        height:0;
+        transition: 300ms;
+        z-index: -1;
+    }
+    #four:hover{
+        color:#fff;
+    }
+    #four::after{
+        content:'';
+        position:absolute;
+        bottom:0;
+        left:0;
+        background-color: blueviolet;
+        width: 0;
+        height:0;
+        transition: 300ms;
+        z-index: -1;
+    }
+    #four:hover::after,
+    #four:hover::before{
+        height: 100%;
+        width:100%;
+    }
+    #five{
+        position:relative;
+    }
+    #five::before{
+        position: absolute;
+        top:0;
+        left:0;
+        content:'';
+        width: 0;
+        height: 3px;
+        background-color: blueviolet;
+        transition: 300ms;
+    }
+    #five::after{
+        position: absolute;
+        bottom:0;
+        right:0;
+        content:'';
+        width: 0;
+        height: 3px;
+        background-color: blueviolet;
+        transition: 300ms;
+    }
+    #five-span::before{
+        position: absolute;
+        top:0;
+        right:0;
+        content:'';
+        width: 3px;
+        height: 0;
+        background-color: blueviolet;
+        transition: 300ms;
+    }
+    #five-span::after{
+        position: absolute;
+        bottom:0;
+        left:0;
+        content:'';
+        width: 3px;
+        height: 0;
+        background-color: blueviolet;
+        transition: 300ms;
+    }
+    #five:hover::before{
+        width: 100%;
+    }
+    #five:hover > #five-span::before{
+        transition-delay:300ms ;
+        height: 100%;
+    }
+    #five:hover::after{
+        transition-delay: 600ms;
+        width: 100%;
+    }
+    #five:hover > #five-span::after{
+        transition-delay: 900ms;
+        height: 100%;
+    }
+    #six{
+        position:relative;
+        transition:300ms;
+    }
+    #six::before{
+        content:'';
+        position:absolute;
+        width: 0;
+        height:100%;
+        top:0;
+        left: 0;
+        background-color: blueviolet;
+        transition:300ms;
+        z-index: -1;
+    }
+    #six:hover{
+        color:#fff;
+    }
+    #six:hover::before{
+        width: 100%;
+    }
+    #seven{
+        position:relative;
+        border:3px solid blueviolet;
+        transition:300ms;
+    }
+    #seven::before{
+        position:absolute;
+        content:'';
+        top:0;
+        right:0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 0 0;
+        border-color: transparent blueviolet transparent transparent;
+        transition:300ms;
+    }
+    #seven::after{
+        position:absolute;
+        content:'';
+        bottom:0;
+        right:0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 0 0;
+        border-color: transparent transparent blueviolet transparent;
+        transition:300ms;
+    }
+    #seven:hover{
+        padding-right: 40px;
+    }
+    #seven:hover::before{
+        border-width: 0 40px 40px 0;
+    }
+    #seven:hover::after{
+        border-width: 0 0 40px 40px;
+    }
 </style>
 <body>
     <button id="one">Hover</button>
     <button id="two">Hover</button>
     <button id="three">Hover</button>
+    <button id="four">Hover</button>
+    <button id="five"><span id="five-span"></span>Hover</button>
+    <button id="six">Hover</button>
+    <button id="seven">Hover</button>
 </body>
 </html>
